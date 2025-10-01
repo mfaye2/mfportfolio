@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projet 3 — Collecte de données conforme RGPD | Mouhamadou Faye</title>
+  <meta name="description" content="Mission Dev’Immediat : recommandations RGPD, extraction anonymisée du CRM et rapport qualité. Résumé, scénario, livrables et déroulé de soutenance." />
+  <meta property="og:title" content="Collecte de données conforme RGPD — Projet 3" />
+  <meta property="og:description" content="Recommandations RGPD, anonymisation CRM, rapport qualité pour Dev’Immediat." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mfaye61.com/description-projet3.html" />
+  <meta property="og:image" content="https://mfaye61.com/images/projet3.jpg" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{--bg:#0b1020;--card:#111733;--muted:#a7b0c3;--text:#e8ecf8;--brand:#5aa1f2;--accent:#93f2c2}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#0b1020;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:960px;margin:auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,16,32,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);z-index:10}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 24px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{width:28px;height:28px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--text)}
+    .btn.primary{background:linear-gradient(180deg,#3a7be0,#2e64c0);border-color:#2e64c0}
+    .grid{display:grid;gap:16px}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:#111733;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}
+    .hero img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.12);object-fit:cover;aspect-ratio:16/9}
+    .pill{display:inline-block;font-size:12px;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px 10px;background:rgba(255,255,255,.04);margin-bottom:10px}
+    h1{margin:6px 0 10px;font-size:30px}
+    h2{margin:20px 0 10px;font-size:22px}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 18px}
+    .downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    footer{margin:24px 0 40px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;padding:0 24px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.cols-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">
+        <img src="images/logo.png" alt="Logo">
+        <strong>Mouhamadou Faye</strong>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="index.html">← Retour au portfolio</a>
+        <a class="btn primary" href="https://github.com/votre-github/projet-rgpd" target="_blank" rel="noopener">Dépôt GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <span class="pill">Projet 3 — RGPD • 25h • Mis à jour : 17 sept. 2024</span>
+        <h1>Collecte de données conforme RGPD (Dev’Immediat)</h1>
+        <p class="muted">
+          <strong>Résumé professionnel :</strong> mission de conseil chez <strong>Dev’Immediat</strong> (assurance automobile)
+          après une sanction CNIL limitant les traitements. Objectifs : (1) définir <strong>5 recommandations RGPD</strong> pour
+          sécuriser les données CRM, (2) livrer une <strong>extraction CSV totalement anonymisée</strong> (exclusion des données
+          personnelles et des <strong>tarifs détaillés</strong>) en utilisant <strong>Microsoft Power Query</strong>, (3) produire un
+          <strong>rapport qualité</strong> décrivant la procédure de collecte, préparation et contrôles afin qu’elle soit
+          <strong>reproductible</strong> pendant la durée de la sanction.
+        </p>
+        <div class="downloads">
+          <a class="btn" href="docs/recommandations-rgpd.pdf" target="_blank" rel="noopener">Recommandations (PDF)</a>
+          <a class="btn" href="docs/donnees-anonymisees.csv" target="_blank" rel="noopener">Données anonymisées (CSV)</a>
+          <a class="btn" href="docs/rapport-rgpd.pdf" target="_blank" rel="noopener">Rapport (PDF)</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/projet3.jpg" alt="Illustration RGPD / anonymisation CRM">
+      </div>
+    </section>
+
+    <!-- SCÉNARIO -->
+    <section class="card">
+      <h2>Scénario</h2>
+      <p>
+        Envoyé en mission par mon ESN, j’accompagne <strong>Dev’Immediat</strong>, courtier en assurance auto (prospection commerciale,
+        marge sur contrats). À la suite d’une plainte client, la CNIL a imposé une <strong>limitation temporaire des traitements</strong>.
+        Il faut remettre le CRM en conformité RGPD et assurer la continuité d’activité avec des données <strong>anonymisées</strong>.
+      </p>
+      <p class="muted">Supports fournis : base client SQLite, dictionnaire des données, modèle de rapport, checklist.</p>
+    </section>
+
+    <!-- ACTIONS DEMANDÉES -->
+    <section class="grid cols-2">
+      <article class="card">
+        <h2>Actions demandées</h2>
+        <ul>
+          <li><strong>5 recommandations</strong> de gestion RGPD sur les données CRM (document ≤ 2 pages).</li>
+          <li><strong>Extraction CSV</strong> pour l’équipe performance commerciale :
+            <ul>
+              <li>anonymisation totale (aucune donnée personnelle traitée) ;</li>
+              <li><strong>pas d’accès aux tarifs détaillés</strong> ;</li>
+              <li>nettoyage/anonymisation a posteriori via <strong>Power Query</strong>.</li>
+            </ul>
+          </li>
+          <li><strong>Rapport qualité</strong> (≤ 2 pages) retraçant la procédure et les contrôles.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Méthodologie appliquée</h2>
+        <ul>
+          <li><strong>Collecte</strong> : extraction brute CRM → zone de préparation.</li>
+          <li><strong>Préparation & anonymisation</strong> : suppression d’identifiants, pseudonymisation/hachage,
+              agrégations et masquage des tarifs détaillés dans Power Query.</li>
+          <li><strong>Qualité</strong> : règles métiers, contrôles de cohérence, journalisation.</li>
+          <li><strong>Livraison</strong> : CSV anonymisé + recommandations + rapport.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- LIVRABLES -->
+    <section class="card">
+      <h2>Livrables</h2>
+      <ul>
+        <li><strong>Recommandations RGPD</strong> (PDF, ≤ 2 pages).</li>
+        <li><strong>Fichier CSV</strong> anonymisé conforme au guide RGPD interne.</li>
+        <li><strong>Rapport qualité</strong> (PDF, ≤ 2 pages) — collecte, préparation, préconisations.</li>
+      </ul>
+      <div class="downloads">
+        <a class="btn" href="docs/recommandations-rgpd.pdf" target="_blank">PDF recommandations</a>
+        <a class="btn" href="docs/donnees-anonymisees.csv" target="_blank">CSV anonymisé</a>
+        <a class="btn" href="docs/rapport-rgpd.pdf" target="_blank">PDF rapport</a>
+        <a class="btn primary" href="https://github.com/votre-github/projet-rgpd" target="_blank" rel="noopener">Dépôt GitHub</a>
+      </div>
+    </section>
+
+    <!-- SOUTENANCE -->
+    <section class="card">
+      <h2>Soutenance (structure)</h2>
+      <ul>
+        <li><strong>Présentation des livrables (15 min)</strong> :
+          règles de gestion RGPD, requête SQL d’extraction, traitements Power Query (nettoyage & anonymisation) et démonstrations.</li>
+        <li><strong>Discussion (10 min)</strong> avec l’évaluateur (rôle de Clara, DG) :
+          compréhension des règles, pertinence des traitements et préconisations, pédagogie et communication.</li>
+        <li><strong>Debrief (5 min)</strong> hors rôle.</li>
+      </ul>
+      <p class="muted">Durée attendue : 15 min ± 5. En-dessous de 10 min ou au-dessus de 20 min, la présentation peut être refusée.</p>
+    </section>
+
+    <!-- COMPÉTENCES ÉVALUÉES -->
+    <section class="card">
+      <h2>Compétences évaluées</h2>
+      <ul>
+        <li>Collecter des données en appliquant les normes de protection.</li>
+        <li>Documenter et transférer des données vers une zone de préparation en respectant les normes.</li>
+        <li>Préparer des données en garantissant le respect des processus qualité.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding-top:0">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px" class="muted">
+        <span>© <script>document.write(new Date().getFullYear())</script> Mouhamadou Faye</span>
+        <a href="index.html">Retour au portfolio</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

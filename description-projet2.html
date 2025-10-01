@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Projet 2 — Description</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css"><!-- réutilise ton CSS si tu en as un -->
+  <style>
+    /* Styles légers si aucun CSS global */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 24px; }
+    .container { max-width: 960px; margin: 0 auto; }
+    h1 { font-size: 1.8rem; margin: 0 0 8px; }
+    h2 { margin-top: 1.6rem; font-size: 1.2rem; }
+    .muted { color:#555; }
+    .btn { display:inline-block; padding:10px 16px; border-radius:999px; border:1px solid #ccc; text-decoration:none; }
+    .btn + .btn { margin-left:8px; }
+    ul { padding-left:1.2rem; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a class="btn" href="index.html">← Retour</a>
+      <a class="btn" href="https://github.com/votre-github/docker-wsl-stack" target="_blank" rel="noopener">Voir le livrable GitHub</a>
+    </div>
+
+    <header>
+      <h1>Projet 2 — Requêtez une base de données avec SQL</h1>
+      <p class="muted">Accueil • ~40 heures </p>
+    </header>
+
+    <section>
+      <p>Avant de démarrer, nous vous conseillons de :</p>
+      <ul>
+        <li>Lire le scénario en entier, chaque section du projet et les documents fournis ;</li>
+        <li>Préparer une liste de questions pour la première session de mentorat.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Scénario</h2>
+      <p>Vous arrivez en mission de consulting comme <strong>Business Intelligence Analyst</strong> chez <strong>Dat’Assur Habitation</strong>, société d’assurance habitation pour particuliers.</p>
+      <p>Le directeur général souhaite différencier l’entreprise en s’appuyant sur les données pour analyser le portefeuille actuel de contrats et devenir <em>data-driven</em>.</p>
+    </section>
+
+    <section>
+      <h2>Mail de bienvenue — Pascal Hernandez (CTO)</h2>
+      <p><em>Objet : Bienvenue</em></p>
+      <p>But du projet : <strong>revoir les prix des contrats</strong> afin d’être plus compétitifs, avec une tarification lisible selon le profil (localisation, propriétaire/locataire, maison/appartement…).</p>
+      <p>Votre première mission : faire un <strong>état des lieux</strong> des contrats actuels.</p>
+      <p>Pièce jointe : <strong>Plan d’action</strong>.</p>
+      <p>À valider avec votre mentor avant d’aller plus loin :</p>
+      <ul>
+        <li>Les données sont <strong>chargées dans la base</strong> ;</li>
+        <li>Le <strong>dictionnaire de données</strong> est complété (typologies) ;</li>
+        <li>Le <strong>modèle d’aide aux requêtes SQL</strong> est rempli.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Une semaine plus tard — Suite du projet</h2>
+      <p><em>Objet : Dat’Assur Habitation — Suite du projet</em></p>
+      <p>Félicitations, la méthodologie de requêtage convient ! À présent :</p>
+      <ul>
+        <li>Écrire les <strong>requêtes SQL</strong> pour extraire les données nécessaires ;</li>
+        <li>Réaliser les <strong>analyses restantes</strong> (cf. compte-rendu en PJ) — vous pouvez écrire directement les requêtes SQL ;</li>
+        <li>Envoyer les <strong>résultats</strong> et la <strong>requête associée</strong> dans un document PDF (utiliser des alias pour la lisibilité) ;</li>
+        <li>Rédiger la <strong>présentation</strong> (méthodologie, étapes, rappel des résultats) en <strong>≤ 10 slides PDF</strong>.</li>
+      </ul>
+      <p>Objectif : se prononcer sur l’état de la <strong>standardisation des tarifs</strong> à date. Une analyse poussée n’est pas attendue ; les résultats des requêtes suffisent, accompagnés d’une description claire de la démarche.</p>
+      <p>Pièce jointe : <strong>Compte rendu de réunion</strong>.</p>
+    </section>
+
+    <section>
+      <h2>Livrables attendus</h2>
+      <ul>
+        <li><strong>Document technique</strong> (PDF, 12 pages max) avec :
+          <ul>
+            <li>Capture d’écran de la base de données chargée ;</li>
+            <li>Exploration des types + capture du <em>dictionnaire de données</em> ;</li>
+            <li>Capture du <em>modèle d’aide aux requêtes</em> rempli pour 3 demandes d’analyses.</li>
+          </ul>
+        </li>
+        <li><strong>Liste complète des analyses</strong> (n° 1 à 12) avec résultats associés.</li>
+        <li><strong>Présentation</strong> (≤ 10 slides PDF) : méthodologie, étapes, rappel des résultats.</li>
+      </ul>
+      <p>Nommage recommandé (dossier zip <code>Titre_du_projet_nom_prénom</code>) :</p>
+      <ul>
+        <li><code>Nom_Prenom_1_documentation_technique_mmaaaa</code></li>
+        <li><code>Nom_Prenom_2_liste_analyses_mmaaaa</code></li>
+        <li><code>Nom_Prenom_3_presentation_mmaaaa</code></li>
+      </ul>
+      <p>Exemple : <code>Dupont_Jean_1_documentation_technique_012022</code></p>
+    </section>
+
+    <section>
+      <h2>Soutenance</h2>
+      <ul>
+        <li><strong>15 min</strong> — Présentation des livrables : base et exploration, méthodologie, réponses aux analyses ;</li>
+        <li><strong>10 min</strong> — Discussion (l’évaluateur joue <strong>Pascal, CTO</strong>) : méthode, SQL, fonctions, explications des résultats, notions de dimensions / indicateurs / agrégation ;</li>
+        <li><strong>5 min</strong> — Debrief hors rôle.</li>
+      </ul>
+      <p>Votre présentation doit durer 15 min (± 5 min). En-dessous de 10 min ou au-dessus de 20 min, elle peut être refusée.</p>
+    </section>
+
+    <section>
+      <h2>Compétences évaluées</h2>
+      <ul>
+        <li>Charger des données dans une base de données ;</li>
+        <li>Rédiger des scripts simples en SQL pour aider à la prise de décision business.</li>
+      </ul>
+    </section>
+
+    <footer style="margin-top:24px">
+      <a class="btn" href="index.html">← Retour au portfolio</a>
+      <a class="btn" href="https://github.com/votre-github/docker-wsl-stack" target="_blank" rel="noopener">Livrable GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
