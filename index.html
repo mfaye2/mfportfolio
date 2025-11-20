@@ -4,106 +4,196 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — Mouhamadou Faye</title>
-
-  <meta name="description" content="Portfolio professionnel : CV, expériences, projets académiques et réalisations. Lié à LinkedIn." />
+  <meta name="description" content="Portfolio de Mouhamadou Faye — Freelance Data Engineer & Data Analyst. Expériences, projets, missions freelance et CV, liés à LinkedIn." />
   <meta property="og:title" content="Portfolio — Mouhamadou Faye" />
-  <meta property="og:description" content="CV, expériences, projets et réalisations." />
+  <meta property="og:description" content="Freelance Data Engineer & Data Analyst : expériences, projets, missions freelance et réalisations." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mfaye61.com" />
+  <meta property="og:url" content="https://mfaye2.github.io/mfportfolio/" />
   <meta property="og:image" content="https://mfaye61.com/images/photo_profil.png" />
-
   <link rel="icon" href="favicon.ico" />
+
   <style>
-    :root{
-      --bg:#0b1020;--card:#111733;--muted:#a7b0c3;--text:#e8ecf8;
-      --brand:#5aa1f2;--accent:#93f2c2
-    }
+    :root{--bg:#0b1020;--card:#111733;--muted:#a7b0c3;--text:#e8ecf8;--brand:#5aa1f2;--accent:#93f2c2}
     *{box-sizing:border-box}
     html,body{
-      margin:0;padding:0;background:linear-gradient(180deg,#0b1020,#0f1530 40%,#0b1020);
-      color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif
+      margin:0;
+      padding:0;
+      background:linear-gradient(180deg,#0b1020, #0f1530 40%, #0b1020);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif
     }
     a{color:var(--brand);text-decoration:none}
     a:hover{opacity:.9;text-decoration:underline}
     .container{max-width:1050px;margin:auto;padding:0 20px}
     header{
-      position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);
-      background:rgba(11,16,32,.65);border-bottom:1px solid rgba(255,255,255,.06);z-index:50
+      position:sticky;
+      top:0;
+      backdrop-filter:saturate(180%) blur(10px);
+      background:rgba(11,16,32,.85);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      z-index:50
     }
+
+    /* Bandeau d'animation type "ondes" sur toute la largeur */
+    .top-anim{
+      position:relative;
+      height:110px;            /* bande fine comme sur ta capture */
+      width:100vw;
+      left:50%;
+      transform:translateX(-50%);
+      margin:0 0 10px 0;
+      overflow:hidden;
+    }
+    #hero-wave{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
     nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;gap:12px;align-items:center}
     .brand img{width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
     .brand strong{letter-spacing:.4px}
-
-    /* ====== Bande animée pleine largeur ====== */
-    .hero-banner{
-      position:relative;height:130px;width:100vw;left:50%;transform:translateX(-50%);margin:0 0 10px 0
-    }
-    #hero-wave{position:absolute;inset:0;width:100%;height:100%;display:block}
-
     .navlinks{display:flex;gap:18px;align-items:center;font-size:14px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:var(--text)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      cursor:pointer
+    }
     .btn:hover{transform:translateY(-1px)}
     .btn.primary{background:linear-gradient(180deg,#3a7be0,#2e64c0);border-color:#2e64c0}
     .btn.ghost{background:transparent}
-
-    .hero{padding:32px 0 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
-    .hero h1{font-size:clamp(36px,6vw,56px);line-height:1.05;margin:0 0 12px;font-weight:800;letter-spacing:.2px}
+    .hero{
+      padding:32px 0 36px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px
+    }
+    .hero h1{
+      font-size:clamp(36px,6vw,56px);
+      line-height:1.05;
+      margin:0 0 12px;
+      font-weight:800;
+      letter-spacing:0.2px
+    }
     .muted{color:var(--muted);font-size:1.05rem}
     .tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-    .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04)
+    }
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px
+    }
     .hero .card{padding:18px}
-    .photo{width:100%;aspect-ratio:1/1;border-radius:16px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
-
+    .photo{
+      width:100%;
+      aspect-ratio:1/1;
+      border-radius:16px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.12)
+    }
     section{padding:22px 0}
     .section-title{font-size:22px;margin:22px 0}
     .grid{display:grid;gap:16px}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .pill{font-size:12px;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px 8px;background:rgba(255,255,255,.04)}
-    .proj{display:flex;flex-direction:column;gap:10px;padding:14px}
-    .proj img{width:100%;aspect-ratio:16/9;border-radius:14px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
+    .pill{
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      padding:4px 8px;
+      background:rgba(255,255,255,.04)
+    }
+    .proj{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:14px
+    }
+    .proj img{
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:14px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.12)
+    }
     .proj h3{margin:0;font-size:16px}
     .proj .links{display:flex;gap:10px;flex-wrap:wrap}
     .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .footer{margin:36px 0 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted)}
-
+    .footer{
+      margin:36px 0 60px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted)
+    }
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .grid.cols-2{grid-template-columns:1fr}
       .grid.cols-3{grid-template-columns:1fr 1fr}
     }
     @media (max-width:640px){
-      nav{height:auto;padding:10px 0;gap:10px;flex-direction:column;align-items:flex-start}
+      nav{
+        height:auto;
+        padding:10px 0;
+        gap:10px;
+        flex-direction:column;
+        align-items:flex-start
+      }
       .grid.cols-3{grid-template-columns:1fr}
     }
-    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Roboto Mono",monospace;font-size:12px}
+    .kbd{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco,"Roboto Mono",monospace;
+      font-size:12px
+    }
   </style>
 
-  <!-- JSON-LD SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mouhamadou Faye",
-    "jobTitle": "Mastère Data Engineer (alternance)",
+    "jobTitle": "Freelance Data Engineer / Data Analyst",
     "image": "https://mfaye61.com/images/photo_profil.png",
-    "url": "https://mfaye61.com",
-    "sameAs": ["https://www.linkedin.com/in/mouhamadou-faye-28b513122/"]
+    "url": "https://mfaye2.github.io/mfportfolio/",
+    "sameAs": [
+      "https://www.linkedin.com/in/mouhamadou-faye-28b513122/",
+      "https://github.com/votre-github",
+      "https://quickiadata.com"
+    ]
   }
   </script>
 </head>
 <body>
-
   <header>
     <div class="container">
       <nav>
-        <div class="brand"><img src="images/logo.png" alt="Logo"/><strong>Mouhamadou Faye</strong></div>
+        <div class="brand">
+          <img src="images/logo.png" alt="Logo"/>
+          <strong>Mouhamadou Faye</strong>
+        </div>
         <div class="navlinks">
           <a href="#a-propos">À propos</a>
           <a href="#experiences">Expériences</a>
           <a href="#projets">Projets</a>
+          <a href="#freelance">Freelance</a>
+          <a href="#competences">Compétences</a>
+          <a href="#formation">Formations</a>
           <a href="#cv">CV</a>
           <a href="#contact">Contact</a>
           <a class="btn ghost" rel="noopener" target="_blank" href="https://www.linkedin.com/in/mouhamadou-faye-28b513122/">LinkedIn</a>
@@ -113,31 +203,33 @@
     </div>
   </header>
 
-  <!-- Bande d’animation plein écran -->
-  <div class="hero-banner"><canvas id="hero-wave"></canvas></div>
-
   <main class="container">
+    <!-- BANDEAU D'ANIMATION ONDES -->
+    <div class="top-anim"><canvas id="hero-wave"></canvas></div>
+
     <!-- HERO -->
     <div class="hero">
       <div class="card">
-        <p class="pill">Alternance Data • Île-de-France • 3 sem. entreprise / 1 sem. école</p>
+        <p class="pill">Freelance • Data Engineer • Data Analyst</p>
         <h1>Bonjour, je suis <span style="color:var(--accent)">Mouhamadou Faye</span> 👋</h1>
         <p class="muted">
-          Étudiant en <strong>mastère de Data Engineering</strong>, passionné par l’analyse et la valorisation des données.
-          Je transforme des données brutes en <strong>outils d’aide à la décision</strong> via des pipelines fiables
-          et des <strong>tableaux de bord Power BI</strong>. Rigoureux, curieux et créatif, je recherche une alternance
-          pour appliquer mes compétences dans un environnement stimulant.
+          Diplômé d’un <strong>Mastère Data Engineer</strong> et actuellement <strong>freelance</strong>,
+          je suis passionné par la <strong>valorisation et l’exploitation des données</strong>.
+          Avec des bases solides en <strong>Python, SQL, ETL</strong> et <strong>Power BI</strong>,
+          j’aide les entreprises à transformer leurs données en <strong>insights actionnables</strong>
+          pour la décision. Rigoureux, pédagogue et orienté client, j’interviens à la fois comme
+          <strong>Data Engineer</strong> et <strong>Data Analyst</strong>.
         </p>
         <div class="tags">
           <span class="tag">Python • SQL • VBA</span>
           <span class="tag">ETL / DWH</span>
           <span class="tag">Airflow • CI/CD</span>
-          <span class="tag">Power BI • Excel</span>
+          <span class="tag">Power BI • Excel • Tableau</span>
           <span class="tag">AWS (S3, Glue)</span>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn primary" href="#contact">Me contacter</a>
-          <a class="btn" href="#competences">Voir mes compétences</a>
+          <a class="btn" href="#freelance">Voir mes missions freelance</a>
           <a class="btn" rel="noopener" target="_blank" href="https://www.linkedin.com/in/mouhamadou-faye-28b513122/">Profil LinkedIn</a>
         </div>
       </div>
@@ -151,11 +243,16 @@
       <h2 class="section-title">À propos</h2>
       <div class="grid cols-2">
         <div class="card" style="padding:16px">
-          <p>Basé en Île-de-France, mobile en France. Je conçois et opère des <strong>flux de données</strong> de bout en bout : collecte, nettoyage, modélisation, automatisation et exposition décisionnelle. Je privilégie des solutions simples et robustes, documentées et réutilisables.</p>
+          <p>
+            Basé en Île-de-France (mobile en France), je travaille aujourd’hui en
+            <strong>freelance</strong> via mon activité <strong>Quick IA &amp; Data Solutions</strong>.
+            Je conçois et opère des <strong>flux de données</strong> de bout en bout :
+            collecte, nettoyage, modélisation, automatisation et restitution décisionnelle.
+          </p>
           <ul>
-            <li>📍 Localisation : Île-de-France — mobilité nationale</li>
-            <li>🎯 Objectif : Alternance Data Engineer (3 sem. entreprise / 1 sem. école)</li>
-            <li>🧰 Stack : Python, SQL, Airflow, Power BI, GitLab CI/CD, AWS (S3, Glue), Excel</li>
+            <li>📍 Localisation : Île-de-France — missions à distance ou hybrides</li>
+            <li>🎯 Objectif : Missions & postes Data Engineer / Data Analyst</li>
+            <li>🧰 Stack : Python, SQL, Airflow, Power BI / Tableau, GitLab CI/CD, AWS (S3, Glue), Excel</li>
           </ul>
         </div>
         <div class="card" style="padding:16px">
@@ -163,89 +260,137 @@
           <div class="skills">
             <span class="pill">Rigueur & sens de l’analyse</span>
             <span class="pill">Autonomie & initiative</span>
-            <span class="pill">Communication inter-équipes</span>
-            <span class="pill">Français (natif)</span>
+            <span class="pill">Pédagogie & vulgarisation</span>
+            <span class="pill">Travail en équipe</span>
+            <span class="pill">Français (courant)</span>
             <span class="pill">Anglais (B2)</span>
           </div>
-          <p class="muted" style="margin-top:8px">Centres d’intérêt : Scrabble (logique & stratégie), Football (esprit d’équipe).</p>
+          <p class="muted" style="margin-top:8px">
+            Centres d’intérêt : Scrabble (logique & stratégie), Football (esprit d’équipe).
+          </p>
         </div>
       </div>
     </section>
 
     <!-- EXPÉRIENCES -->
     <section id="experiences">
-      <h2 class="section-title">Expériences</h2>
+      <h2 class="section-title">Expériences professionnelles</h2>
       <div class="grid cols-2">
+
         <div class="card" style="padding:16px">
-          <h3 style="margin:0 0 6px">Data Engineer — Alternance / Stage (Datategy)</h3>
-          <div class="muted">Juin 2025 → Août 2025 • Paris</div>
+          <h3 style="margin:0 0 6px">Analyste de données — Freelance</h3>
+          <div class="muted">Quick IA &amp; Data Solutions • Déc. 2024 → aujourd’hui • Lyon (remote)</div>
           <ul>
-            <li>Conception et <strong>industrialisation de pipelines ETL</strong> avec Python et <strong>Airflow</strong> : extraction multi-sources, validation de schémas, transformations (normalisation, déduplication) et chargement dans un DWH.</li>
-            <li>Mise en place de <strong>contrôles qualité</strong> (tests SQL, règles métiers) et d’alertes pour fiabiliser les flux.</li>
-            <li>Contribution aux <strong>tableaux de bord métiers</strong> sous Power BI : définition des KPI, modélisation (Power Query / DAX), optimisation des rafraîchissements.</li>
-            <li>Documentation des workflows, <strong>CI/CD</strong> des DAGs, bonnes pratiques de versioning.</li>
+            <li>Analyse et visualisation de données pour différents clients (finance, services, PME).</li>
+            <li>Création de dashboards interactifs (<strong>Tableau</strong>, <strong>Power BI</strong>) pour le pilotage d’activité.</li>
+            <li>Automatisation de rapports, nettoyage et structuration des données (<strong>Python, SQL</strong>).</li>
+            <li>Accompagnement des équipes métier pour interpréter les résultats et prendre des décisions data-driven.</li>
           </ul>
         </div>
+
         <div class="card" style="padding:16px">
-          <h3 style="margin:0 0 6px">Data Analyst & Automation — Stage (Datategy)</h3>
-          <div class="muted">Mars 2024 → Août 2024 • Paris</div>
+          <h3 style="margin:0 0 6px">Stage Data Engineer — Datategy</h3>
+          <div class="muted">Sept. 2023 → Déc. 2023 • Paris</div>
           <ul>
-            <li>Création de <strong>dashboards Power BI</strong> pour les équipes RH et commerciales (suivi recrutement, pipe commercial, activité), avec filtres interactifs et mises en forme conditionnelles.</li>
-            <li>Automatisation de flux via <strong>Python + Airflow</strong> : ingestion, enrichissement, agrégations planifiées.</li>
-            <li>Structuration de <strong>jeux de données</strong> complexes en SQL : vues matérialisées, indexation et optimisation de requêtes.</li>
-            <li>Rédaction de <strong>guides d’usage</strong> et standardisation des sources pour faciliter la réutilisation.</li>
+            <li>Mise en place de pipelines <strong>ETL</strong> avec Python et Airflow pour automatiser le traitement de données clients.</li>
+            <li>Nettoyage et validation des jeux de données via SQL (tests, schémas, contraintes).</li>
+            <li>Création de tableaux de bord <strong>Power BI</strong> pour le suivi des performances métiers.</li>
           </ul>
         </div>
+
+        <div class="card" style="padding:16px">
+          <h3 style="margin:0 0 6px">Stage Data Analyst &amp; Automation — Datategy</h3>
+          <div class="muted">Mars 2022 → Août 2022 • Paris</div>
+          <ul>
+            <li>Création de dashboards Power BI pour les services RH et commerciaux (suivi activité, KPI dynamiques).</li>
+            <li>Automatisation des flux de données avec Python et Airflow (intégration, enrichissement, agrégation).</li>
+            <li>Optimisation et documentation des jeux de données SQL pour faciliter la réutilisation.</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
-    <!-- PROJETS -->
+    <!-- PROJETS ACADÉMIQUES -->
     <section id="projets">
       <h2 class="section-title">Projets académiques & réalisations</h2>
       <div class="grid cols-3">
         <article class="proj card">
           <img src="images/projet1.jpg" alt="Aperçu projet 1">
           <h3>Visualisez des données avec Excel</h3>
-          <p class="muted">Mission Business Intelligence chez Primero Bank : analyse des causes de départ clients,
-            production d’un rapport d’analyse puis réalisation de visualisations claires et réutilisables
-            dans Excel pour orienter la stratégie marketing.</p>
-        
+          <p class="muted">
+            Mission BI chez Primero Bank : analyse des causes de départ clients et création de visualisations Excel réutilisables
+            pour orienter la stratégie marketing.
+          </p>
           <div class="links">
-            <!-- Bouton qui ouvre la page 2 avec le résumé/brief complet -->
             <a class="btn" href="description-projet1.html">Description</a>
-        
-            <!-- Bouton livrable qui pointe vers ton dépôt GitHub -->
             <a class="btn" href="https://github.com/votre-github/projet-inventaire" target="_blank" rel="noopener">Livrable</a>
           </div>
         </article>
-          <article class="proj card">
-            <img src="images/projet2.jpg" alt="Aperçu projet 2">
-            <h3> Requêtez une base de données avec SQL </h3>
-            <p class="muted"> Mission de conseil pour Dat’Assur Habitation : chargement de données dans une base SQL,
-              écriture de requêtes pour explorer les contrats, analyser la tarification et livrer un
-              document technique et une présentation structurée. </p>
-            <div class="links">
-              <a class="btn" href="description-projet2.html">Description</a>
-              <a class="btn" href="https://github.com/votre-github/docker-wsl-stack" target="_blank" rel="noopener">Livrable</a>
-            </div>
-          </article>
-          
-          <article class="proj card">
-            <img src="images/projet3.jpg" alt="Aperçu projet 3">
-            <h3>Collecte de données conforme RGPD</h3>
-            <p class="muted">
-              Mission de conseil pour Dev’Immediat (assurance auto) : 
-              recommandations RGPD, extraction anonymisée du CRM et rapport qualité 
-              démontrant le respect des processus de collecte et de préparation des données.
-            </p>
-            <div class="links">
-              <!-- Bouton description avec résumé -->
-              <a class="btn" href="description-projet3.html">Description</a>
-              <!-- Bouton livrable GitHub -->
-              <a class="btn" href="https://github.com/votre-github/projet-rgpd" target="_blank" rel="noopener">Livrable</a>
-            </div>
-          </article>
+
+        <article class="proj card">
+          <img src="images/projet2.jpg" alt="Aperçu projet 2">
+          <h3>Requêtez une base de données avec SQL</h3>
+          <p class="muted">
+            Mission pour Dat’Assur Habitation : exploration des contrats, analyse de la tarification et production d’un document
+            technique et d’une présentation structurée.
+          </p>
+          <div class="links">
+            <a class="btn" href="description-projet2.html">Description</a>
+            <a class="btn" href="https://github.com/votre-github/docker-wsl-stack" target="_blank" rel="noopener">Livrable</a>
+          </div>
+        </article>
+
+        <article class="proj card">
+          <img src="images/projet3.jpg" alt="Aperçu projet 3">
+          <h3>Collecte de données conforme RGPD</h3>
+          <p class="muted">
+            Mission de conseil pour Dev’Immediat (assurance auto) : recommandations RGPD, extraction anonymisée du CRM et
+            rapport qualité documentant le processus.
+          </p>
+          <div class="links">
+            <a class="btn" href="description-projet3.html">Description</a>
+            <a class="btn" href="https://github.com/votre-github/projet-rgpd" target="_blank" rel="noopener">Livrable</a>
+          </div>
+        </article>
       </div>
+    </section>
+
+    <!-- FREELANCE / QUICK IA & DATA SOLUTIONS -->
+    <section id="freelance">
+      <h2 class="section-title">Missions freelance — Quick IA &amp; Data Solutions</h2>
+      <div class="grid cols-2">
+        <div class="card" style="padding:16px">
+          <h3>Accompagnement data pour PME &amp; ETI</h3>
+          <p class="muted">
+            Missions d’analyse et de visualisation de données pour différents clients : construction de tableaux de bord,
+            automatisation de reporting, structuration de la donnée pour la prise de décision.
+          </p>
+          <ul>
+            <li>Audit de la donnée existante et définition des KPI.</li>
+            <li>Création de dashboards interactifs (Power BI, Tableau).</li>
+            <li>Automatisation des flux (Python, SQL, outils cloud).</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:16px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <h3>Quick IA &amp; Data Solutions</h3>
+            <p class="muted">
+              Marque freelance dédiée à l’aide à la décision par la donnée : data engineering, data analytics et
+              prototypage d’IA appliquée aux cas métiers.
+            </p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+            <a class="btn primary" href="https://quickiadata.com" target="_blank" rel="noopener">Visiter quickiadata.com</a>
+            <a class="btn" href="#contact">Discuter d’un projet</a>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px">
+        Cette section pourra être enrichie avec des études de cas détaillées (captures d’écran, liens vers notebooks,
+        dashboards anonymisés, etc.) au fur et à mesure de tes missions.
+      </p>
     </section>
 
     <!-- COMPÉTENCES -->
@@ -253,42 +398,95 @@
       <h2 class="section-title">Compétences</h2>
       <div class="grid cols-2">
         <div class="card" style="padding:16px">
-          <h3>Python, SQL & VBA</h3>
-          <p>Je développe des scripts <strong>Python</strong> pour nettoyer, transformer et valider les données (pandas, scripts batch), et j’écris des requêtes <strong>SQL</strong> performantes pour le requêtage et l’agrégation. <strong>VBA</strong> me permet d’automatiser des traitements récurrents dans Excel quand l’environnement métier l’impose.</p>
+          <h3>Python, SQL &amp; VBA</h3>
+          <p>
+            Développement de scripts <strong>Python</strong> pour le nettoyage et la transformation (pandas),
+            requêtes <strong>SQL</strong> performantes pour l’analyse et l’agrégation, automatisation de tâches
+            récurrentes via <strong>VBA</strong> dans Excel lorsque l’environnement métier l’impose.
+          </p>
         </div>
         <div class="card" style="padding:16px">
           <h3>ETL / Data Warehouse</h3>
-          <p>Je conçois des <strong>chaînes ETL</strong> robustes incluant la <em>modélisation</em> (schémas en étoile/flake), le <em>nettoyage</em> (qualité, normalisation) et la <em>transformation</em>. Notions d’outils comme <strong>Talend</strong> et <strong>SSIS</strong> pour packager et orchestrer les flux.</p>
+          <p>
+            Conception de <strong>chaînes ETL</strong> robustes : modélisation (schémas en étoile/flake),
+            nettoyage (qualité, normalisation) et transformation. Notions d’outils comme <strong>Talend</strong>
+            et <strong>SSIS</strong> pour orchestrer les flux.
+          </p>
         </div>
         <div class="card" style="padding:16px">
-          <h3>Power BI & Excel</h3>
-          <p>Je crée des <strong>dashboards métier</strong> lisibles : modélisation des données, mesures DAX, navigation par rôles et optimisation des temps de rafraîchissement. Dans <strong>Excel</strong>, j’exploite les tableaux structurés, Power Query et des fonctions avancées pour livrer rapidement des rapports.</p>
+          <h3>Power BI, Tableau &amp; Excel</h3>
+          <p>
+            Création de <strong>dashboards métiers</strong> lisibles : modélisation, mesures DAX,
+            filtres interactifs et optimisation des temps de rafraîchissement. Maîtrise des tableaux structurés,
+            Power Query et fonctions avancées dans <strong>Excel</strong>.
+          </p>
         </div>
         <div class="card" style="padding:16px">
-          <h3>Bases SQL & NoSQL</h3>
-          <p>À l’aise avec la <strong>structuration</strong> (schémas), l’<strong>interrogation</strong> (jointures, fenêtres) et l’<strong>optimisation</strong> (index, plan d’exécution) côté SQL. Connaissance des paradigmes <strong>NoSQL</strong> pour des besoins de volumétrie ou de flexibilité.</p>
+          <h3>Bases SQL &amp; NoSQL</h3>
+          <p>
+            Structuration (schémas), interrogation (jointures, fenêtres) et optimisation (index, plans d’exécution)
+            de bases SQL. Connaissances des paradigmes <strong>NoSQL</strong> pour des besoins de volumétrie ou
+            de flexibilité.
+          </p>
         </div>
         <div class="card" style="padding:16px">
           <h3>Cloud (AWS)</h3>
-          <p>Notions sur <strong>AWS</strong> : stockage de données sur <strong>S3</strong>, préparation avec <strong>Glue</strong>. Capacité à connecter ces services à des pipelines existants pour accélérer la mise à disposition des données.</p>
+          <p>
+            Utilisation de <strong>AWS</strong> pour le stockage (<strong>S3</strong>) et la préparation de données
+            (<strong>Glue</strong>), en intégration avec des pipelines analytiques existants.
+          </p>
         </div>
         <div class="card" style="padding:16px">
-          <h3>Orchestration & CI/CD</h3>
-          <p>Orchestration de tâches avec <strong>Airflow</strong> (DAGs, capteurs, planifications) et mise en place de <strong>GitLab CI/CD</strong> pour automatiser tests, déploiements et contrôles de qualité des données.</p>
+          <h3>Orchestration &amp; CI/CD</h3>
+          <p>
+            Orchestration des tâches avec <strong>Airflow</strong> (DAGs, capteurs, planifications) et mise en place
+            de <strong>GitLab CI/CD</strong> pour automatiser tests, déploiements et contrôles de qualité des données.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation">
+      <h2 class="section-title">Formations & certifications</h2>
+      <div class="grid cols-2">
+        <div class="card" style="padding:16px">
+          <h3>Mastère Data Engineer — École PMN</h3>
+          <div class="muted">Novembre 2022 → Décembre 2023 • Nanterre</div>
+          <p>
+            Approfondissement du traitement et de l’industrialisation des données : pipelines, automatisation, visualisation
+            et qualité des flux de données.
+          </p>
+        </div>
+        <div class="card" style="padding:16px">
+          <h3>Certification Analyse de données — OpenClassrooms</h3>
+          <div class="muted">2024 • En ligne</div>
+          <p>
+            Requêtes SQL, gestion de bases de données, création de tableaux de bord, respect des contraintes RGPD.
+          </p>
+        </div>
+        <div class="card" style="padding:16px">
+          <h3>Master Calcul scientifique &amp; Mathématiques de l’innovation — Université de Strasbourg</h3>
+          <div class="muted">Septembre 2020 → Août 2022 • Strasbourg</div>
+          <p>
+            Modélisation, optimisation, statistiques et calcul haute performance appliqués à des problématiques réelles.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- CV -->
     <section id="cv">
-      <h2 class="section-title">CV & Téléchargements</h2>
+      <h2 class="section-title">CV & téléchargements</h2>
       <div class="card" style="padding:16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap">
         <div>
-          <p style="margin:0">Dernière mise à jour : <span class="kbd">septembre 2025</span></p>
-          <p class="muted" style="margin:6px 0 0">Ajoutez votre CV PDF dans <span class="kbd">/docs/CV.pdf</span></p>
+          <p style="margin:0">Dernière mise à jour : <span class="kbd">novembre 2025</span></p>
+          <p class="muted" style="margin:6px 0 0">
+            CV PDF disponible dans <span class="kbd">docs/CV_2025-11-13_mouhamadou_Faye.pdf</span>
+          </p>
         </div>
         <div style="display:flex;gap:10px">
-          <a class="btn primary" href="./docs/CV.pdf" download>Télécharger le CV (PDF)</a>
+          <a class="btn primary" href="docs/CV_2025-11-13_mouhamadou_Faye.pdf" download>Télécharger le CV (PDF)</a>
           <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/mouhamadou-faye-28b513122/">Voir LinkedIn</a>
         </div>
       </div>
@@ -313,7 +511,10 @@
           <p>📧 <a href="mailto:fayemouhamadoulatyr@gmail.com">fayemouhamadoulatyr@gmail.com</a></p>
           <p>🔗 <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/mouhamadou-faye-28b513122/">linkedin.com/in/mouhamadou-faye-28b513122</a></p>
           <p>🐙 <a target="_blank" rel="noopener" href="https://github.com/votre-github">github.com/votre-github</a></p>
-          <p class="muted">RGPD : ce site ne dépose pas de cookies hors hébergeur. Aucune donnée personnelle n'est stockée en dehors des services que vous utilisez (Netlify, email).</p>
+          <p class="muted">
+            RGPD : ce site ne dépose pas de cookies hors hébergeur. Aucune donnée personnelle n'est stockée en dehors
+            des services que vous utilisez (Netlify, email).
+          </p>
         </div>
       </div>
     </section>
@@ -325,51 +526,64 @@
   </main>
 
   <script>
+    // année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // === Animation "ondes" style oscilloscope (pleine largeur) ===
-    const wave = document.getElementById('hero-wave');
-    if (wave){
-      const ctx = wave.getContext('2d');
+    // --- Animation "ondes" en haut de page ---
+    const waveCanvas = document.getElementById('hero-wave');
+    if (waveCanvas) {
+      const ctx = waveCanvas.getContext('2d');
 
-      function resize(){
-        wave.width = window.innerWidth;
-        wave.height = Math.min(260, Math.max(180, window.innerHeight*0.28));
+      function resizeWave(){
+        waveCanvas.width = window.innerWidth;
+        waveCanvas.height = 110; // même valeur que .top-anim
       }
-      resize(); window.addEventListener('resize', resize);
+      resizeWave();
+      window.addEventListener('resize', resizeWave);
 
       let t = 0;
-      function line(color, amp, freq, speed, offset){
-        ctx.beginPath();
-        for(let x=0; x<wave.width; x++){
-          const y = wave.height/2
-            + Math.sin((x*freq + t*speed)+offset)*amp
-            * (0.8 + 0.2*Math.sin((x+t)*0.002)); // micro-variation
-          if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-        }
-        ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
-      }
-      function grid(){
-        ctx.fillStyle = 'rgba(8,12,28,1)'; ctx.fillRect(0,0,wave.width,wave.height);
-        ctx.strokeStyle = 'rgba(80,120,80,0.15)'; ctx.lineWidth = 1;
-        for(let x=0;x<wave.width;x+=40){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,wave.height); ctx.stroke(); }
-        for(let y=0;y<wave.height;y+=40){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(wave.width,y); ctx.stroke(); }
-      }
-      function draw(){
+      function drawWaves(){
         t += 0.02;
-        grid();
-        const grad = ctx.createLinearGradient(0,0,0,wave.height);
-        grad.addColorStop(0,'rgba(50,200,120,0.15)');
-        grad.addColorStop(1,'rgba(70,130,230,0.15)');
-        ctx.fillStyle = grad; ctx.fillRect(0,0,wave.width,wave.height);
+        const w = waveCanvas.width;
+        const h = waveCanvas.height;
 
-        // trois ondes fines superposées
-        line('rgba(147,242,194,0.9)', 28, 0.012, 2.0, 0);
-        line('rgba(90,161,242,0.9)',  22, 0.015, 2.6, Math.PI/2);
-        line('rgba(255,220,80,0.8)',  14, 0.020, 3.2, Math.PI);
-        requestAnimationFrame(draw);
+        // fond sombre + quadrillage léger
+        ctx.fillStyle = '#041018';
+        ctx.fillRect(0,0,w,h);
+
+        ctx.strokeStyle = 'rgba(0,255,120,0.15)';
+        ctx.lineWidth = 1;
+        const grid = 30;
+        for(let x=0;x<w;x+=grid){
+          ctx.beginPath();
+          ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke();
+        }
+        for(let y=0;y<h;y+=grid){
+          ctx.beginPath();
+          ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke();
+        }
+
+        const mid = h/2;
+        const waves = [
+          {amp:h*0.18, freq:0.012, speed:1.2, color:'rgba(0,210,255,0.9)'},
+          {amp:h*0.12, freq:0.016, speed:0.8, color:'rgba(255,230,0,0.85)'},
+          {amp:h*0.10, freq:0.020, speed:1.5, color:'rgba(0,255,160,0.75)'}
+        ];
+
+        ctx.lineWidth = 2;
+        waves.forEach((wave, idx)=>{
+          ctx.beginPath();
+          ctx.strokeStyle = wave.color;
+          for(let x=0;x<w;x++){
+            const y = mid + Math.sin(x*wave.freq + t*wave.speed + idx)*wave.amp;
+            if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+          }
+          ctx.stroke();
+        });
+
+        requestAnimationFrame(drawWaves);
       }
-      draw();
+      drawWaves();
     }
   </script>
 </body>
